@@ -8,20 +8,24 @@
 #include <string>
 using namespace std;
 
-class Solution {
+class Solution
+{
 public:
-        int lengthOfLastWord(string s) {
+    int lengthOfLastWord(string s)
+    {
         int i = s.size() - 1;
 
         // ここで末尾の空文字がなくなるところまでindexを探す。
-        while(i >= 0 && s[i] == ' ') {
+        while (i >= 0 && s[i] == ' ')
+        {
             i--;
         };
 
         int len = 0;
 
         // 後ろの空白がない箇所から次の空白の位置、またははじめまで長さを足していく
-        while(i >= 0 && s[i] != ' ') {
+        while (i >= 0 && s[i] != ' ')
+        {
             len++;
             i--;
         }

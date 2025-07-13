@@ -9,17 +9,20 @@
 
 #include <vector>
 
-
-class Solution {
+class Solution
+{
 public:
-    std::vector<int> plusOne(std::vector<int>& digits) {
+    std::vector<int> plusOne(std::vector<int> &digits)
+    {
         int n = digits.size();
 
         // 後ろから走査
-        for (int i = n - 1; i >= 0; --i) {
-            if (digits[i] < 9) {
+        for (int i = n - 1; i >= 0; --i)
+        {
+            if (digits[i] < 9)
+            {
                 digits[i] += 1;
-                return digits;  // 繰り上がりなしで完了
+                return digits; // 繰り上がりなしで完了
             }
             // 9 → 0 にして繰り上げ
             digits[i] = 0;

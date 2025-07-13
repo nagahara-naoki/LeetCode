@@ -5,22 +5,30 @@
 // ただし、組み込みの指数関数や演算子は使ってはいけません。
 // たとえば、C++ の pow(x, 0.5) や Python の x ** 0.5 のような関数・演算子は禁止です。
 
-class Solution {
+class Solution
+{
 public:
-    int mySqrt(int x) {
-        if (x == 0) return 0;
+    int mySqrt(int x)
+    {
+        if (x == 0)
+            return 0;
 
         int left = 1, right = x, ans = 0;
 
-        while (left <= right) {
+        while (left <= right)
+        {
             int mid = left + (right - left) / 2;
             long long sq = (long long)mid * mid; // ２乗
-            if (sq == x) return mid;
+            if (sq == x)
+                return mid;
 
-            else if (sq < x) {
-                ans = mid;       // midは解候補
-                left = mid + 1;  // 右側探索
-            } else {
+            else if (sq < x)
+            {
+                ans = mid;      // midは解候補
+                left = mid + 1; // 右側探索
+            }
+            else
+            {
                 right = mid - 1; // 左側探索
             }
         }
